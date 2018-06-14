@@ -9,7 +9,7 @@ This script automates the procedure for combining movies described [here](https:
 - Python library future
 - [imagemagick](https://www.imagemagick.org/)
 - [mplayer](http://www.mplayerhq.hu/design7/news.html)
-- [montage_movies](https://github.com/margrietpalm/montage_movies)
+- [im2movie](https://github.com/margrietpalm/im2movie)
 
 ### Set up as command line program
 1. Make script executable:
