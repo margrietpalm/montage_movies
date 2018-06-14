@@ -21,9 +21,9 @@ This script automates the procedure for combining movies described [here](https:
 
 ## Usage
 
-Example: combine `./im_*.png` into a movie `./movie.avi` showing 5 frames per second:
+Example: combine movies `1.avi`, `2.avi`, `3.avi` and `4.avi` in a 2x2 montage and create a 5fps movie:
 
-```montage_movies -i ./ -t png -o ./ -p im -m movie -f 5```
+```montage_movies -x 2 -y 2 -f 5 1.avi 2.avi 3.avi 4.avi```
 
 More help:
 
