@@ -14,8 +14,8 @@ This script automates the procedure for combining movies described [here](https:
 ### Set up as command line program
 1. Make script executable:
     ```chmod +x montage_movies.py```
-2. Create a link to `https://github.com/margrietpalm/https://github.com/margrietpalm/montage_movies` in a folder in your `PATH`. For example, when you have a `bin` folder in your home
- that is in your `PATH`: `ln -s /path/to/https://https://github.com/margrietpalm/montage_movies.com/margrietpalm/montage_movies/montage_movies.py /home/USERNAME/bin/montage_movies`
+2. Create a link to `montage_movies.py` in a folder in your `PATH`. For example, when you have a `bin` folder in your home
+ that is in your `PATH`: `ln -s /path/to/montage_movies.py /home/USERNAME/bin/montage_movies`
 3. Now you can run the script with `montage_movies`
 
 
