@@ -61,7 +61,8 @@ def montage_movies(movies,ncol,nrow,name,drow=0,dcol=0,fps=1,
         if os.path.isdir(outdir):
             continue
         os.mkdir(outdir)
-        os.system('mplayer -vo png:outdir={} {} > /dev/null 2>&1'.format(outdir,movie))
+        os.system(f'ffmpeg -i {movie} {outdir}/%05d.png > /dev/null 2>&1')
+        #os.system('mplayer -vo png:outdir={} {} > /dev/null 2>&1'.format(outdir,movie))
     nframes_all = [len(os.listdir('temp_montage/frames_{}/'.format(i))) for i in range(len(movies))]
     nframes = nframes_all[0]
     if len(set(nframes_all)) != 1:
@@ -70,7 +71,7 @@ def montage_movies(movies,ncol,nrow,name,drow=0,dcol=0,fps=1,
     # 3) Create montage per frame
     cmdbase = 'montage -geometry +{}+{} -tile {}x{}'.format(ncol,nrow,drow,dcol)
     for i in range(1,nframes+1):
-        cmd = cmdbase+' '+' '.join(['{}/frames_{}/{:08d}.png'.format(tempdir,j,i)
+        cmd = cmdbase+' '+' '.join(['{}/frames_{}/{:05d}.png'.format(tempdir,j,i)
                                 for j in range(len(movies))])+' {}/frame_{:08d}.png'.format(tempdir,i)
         os.system(cmd)
     # 4) Create new movie
